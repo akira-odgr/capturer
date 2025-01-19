@@ -1,0 +1,68 @@
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+
+@mixin nav-button {
+    --opacity: 1;
+    --rotate: 0;
+    --translate: 0.5rem;
+
+    display: grid;
+    place-items: center;
+    width: 50px;
+    aspect-ratio: 1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.is-active {
+        --opacity: 0;
+        --rotate: 135deg;
+        --translate: 0;
+    }
+
+    span {
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: var(--white);
+        grid-area: 1 / 1 / -1 / -1;
+        transition: 0.4s ease;
+
+        &:nth-child(1) {
+            opacity: var(--opacity);
+        }
+
+        &:nth-child(2) {
+            translate: 0 calc(var(--translate) * -1);
+            rotate: (var(--rotate));
+        }
+
+        &:nth-child(3) {
+            translate: 0 var(--translate);
+            rotate: (calc(var(--rotate) * -1));
+        }
+    }
+}
+
+@mixin button {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--text-dark);
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--text-light);
+    }
+}

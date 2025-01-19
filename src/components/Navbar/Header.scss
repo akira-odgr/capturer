@@ -1,44 +1,106 @@
+@use "../../globals/" as *;
+
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+
+header {
+    min-height: 600px;
+    background-image: radial-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("../../assets/images/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .nav {
-    &__menu__btn {
-        --opacity: 1;
-        --rotate: 0;
-        --translate: 0.5rem;
+    position: fixed;
+    top: 0;
+    width: min(100%, var(--max-width));
+    margin: auto;
+    z-index: 10;
 
-        display: grid;
-        width: 50px;
-        aspect-ratio: 1;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--text-dark);
+        padding: 1rem;
 
-        &.is-active {
-            --opacity: 0;
-            --rotate: 135deg;
-            --translate: 0;
+        &__logo {
+            display: flex;
+            max-width: 70px;
         }
 
-        span {
-            display: block;
-            width: 50%;
-            height: 2px;
-            background-color: #000;
-            // grid-row: 1 / -1;
-            // grid-column: 1 / -1;
-            grid-area: 1 / 1 / -1 / -1;
-            transition: 0.4s ease;
+        &__btn {
+            @include nav-button;
+        }
+    }
 
-            &:nth-child(1) {
-                opacity: var(--opacity);
+    &__links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+        gap: 2rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        translate: 0 -100%;
+        transition: 0.5s ease;
+        z-index: -1;
+
+        &.is-active {
+            translate: 0 0;
+        }
+
+        &__logo {
+            display: none;
+        }
+        // li:nth-child(4) {
+        //     display: none;
+        // }
+        a {
+            position: relative;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+            color: var(--white);
+            text-transform: uppercase;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 0;
+                height: 2px;
+                background-color: var(--white);
+                transition: 0.5s;
+            }
+            &:hover::before {
+                animation: border 0.5s forwards;
             }
 
-            &:nth-child(2) {
-                translate: 0 calc(var(--translate) * -1);
-                rotate: var(--rotate);
-            }
-
-            &:nth-child(3) {
-                translate: 0 var(--translate);
-                rotate: calc(var(--rotate) * -1);
+            @keyframes border {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
             }
         }
     }
