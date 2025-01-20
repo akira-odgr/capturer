@@ -1,27 +1,15 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import LogoWhite from "../../assets/images/logo-white.png";
-import HeaderImage from "../../assets/images/header.jpg";
 import "./Header.scss";
 
-const headerBg = {
-    backgroundImage: `radial-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(0, 0, 0, 0.9)
-    ), url(${HeaderImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "600px",
-};
-
-export const Header = () => {
+export const Header: FC = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
-    const toggle = () => {
+    const toggle = (): void => {
         setIsActive(!isActive);
     };
     return (
-        <header style={headerBg}>
+        <header>
             <nav className="nav">
                 <div className="nav__header">
                     <div className="nav__header__logo">

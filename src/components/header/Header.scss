@@ -9,12 +9,40 @@
     --header-font: "Merriweather", serif;
 }
 
+header {
+    background-image: radial-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url(../../assets/images/header.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+
+    @include mq("md") {
+        min-height: 650px;
+    }
+
+    @include mq("md") {
+        min-height: 700px;
+    }
+}
+
 .nav {
     position: fixed;
     top: 0;
     width: min(100%, var(--max-width));
     margin: auto;
     z-index: 10;
+
+    @include mq("md") {
+        position: static;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 900px;
+    }
 
     &__header {
         display: flex;
@@ -23,6 +51,10 @@
         gap: 1rem;
         background-color: var(--text-dark);
         padding: 1rem;
+
+        @include mq("md") {
+            display: none;
+        }
 
         &__logo {
             display: flex;
@@ -48,12 +80,32 @@
         transition: 0.5s ease;
         z-index: -1;
 
+        @include mq("md") {
+            position: static;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: transparent;
+            width: 100%;
+            translate: none;
+            backdrop-filter: none;
+
+            z-index: 10;
+        }
+
         &.is-active {
             translate: 0 0;
         }
 
         &__logo {
             display: none;
+
+            @include mq("md") {
+                display: block;
+
+                img {
+                    max-width: 150px;
+                }
+            }
         }
         // li:nth-child(4) {
         //     display: none;
@@ -62,6 +114,7 @@
             position: relative;
             padding-bottom: 5px;
             border-bottom: 2px solid transparent;
+            font-size: clamp(0.875rem, 1.6vw, 1rem);
             font-weight: 500;
             color: var(--white);
             text-transform: uppercase;
