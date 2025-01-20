@@ -1,12 +1,13 @@
-import "./App.scss";
-import { Header } from "./components/Navbar/Header";
+import { About } from "./components/about/About";
+import { Header } from "./components/header/Header";
 
-function App() {
+import "./App.scss";
+
+export const App = () => {
     return (
         <>
             <Header />
+            <About />
         </>
     );
-}
-
-export default App;
+};

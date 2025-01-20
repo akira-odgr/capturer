@@ -1,8 +1,18 @@
-import LogoWhite from "../../assets/images/logo-white.png";
-// import LogoDark from "../../assets/images/logo-dark.png";
-
-import "./Header.scss";
 import { useState } from "react";
+import LogoWhite from "../../assets/images/logo-white.png";
+import HeaderImage from "../../assets/images/header.jpg";
+import "./Header.scss";
+
+const headerBg = {
+    backgroundImage: `radial-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(0, 0, 0, 0.9)
+    ), url(${HeaderImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "600px",
+};
 
 export const Header = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
@@ -11,7 +21,7 @@ export const Header = () => {
         setIsActive(!isActive);
     };
     return (
-        <header>
+        <header style={headerBg}>
             <nav className="nav">
                 <div className="nav__header">
                     <div className="nav__header__logo">
