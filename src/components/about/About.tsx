@@ -1,8 +1,9 @@
+import { FC } from "react";
 import LogoDark from "../../assets/images/logo-dark.png";
 
 import "./About.scss";
 
-export const About = () => {
+export const About: FC = () => {
     return (
         <section className="about__container section__container">
             <h2 className="section__header">we capture the moments</h2>
