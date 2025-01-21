@@ -3,7 +3,11 @@ import PortfolioImage1 from "../../assets/images/portfolio-1.jpg";
 import PortfolioImage2 from "../../assets/images/portfolio-2.jpg";
 import PortfolioImage3 from "../../assets/images/portfolio-3.jpg";
 
-const portfolioImage = [
+type PortfolioImageType = {
+    image: string;
+};
+
+const portfolioImage: PortfolioImageType[] = [
     {
         image: PortfolioImage1,
     },
