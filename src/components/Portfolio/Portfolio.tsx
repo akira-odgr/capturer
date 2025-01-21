@@ -2,6 +2,8 @@ import { FC } from "react";
 import "./Portfolio.scss";
 import { PortfolioCard } from "./PortfolioCard";
 
+// ... existing code ...
+
 export const Portfolio: FC = () => {
     return (
         <section className="portfolio">
@@ -14,3 +16,5 @@ export const Portfolio: FC = () => {
         </section>
     );
 };
+
+// ... existing code ...
