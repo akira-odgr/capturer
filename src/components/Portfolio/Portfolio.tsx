@@ -1,7 +1,8 @@
+import { FC } from "react";
 import "./Portfolio.scss";
 import { PortfolioCard } from "./PortfolioCard";
 
-export const Portfolio = () => {
+export const Portfolio: FC = () => {
     return (
         <section className="portfolio">
             <div className="portfolio__container">
