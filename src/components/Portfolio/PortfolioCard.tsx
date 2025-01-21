@@ -23,7 +23,7 @@ export const PortfolioCard: FC = () => {
                     <div key={index} className="portfolio__card">
                         <img src={data.image} alt="" />
                         <div className="portfolio__card__content">
-                            <button className="portfolio__card__btn">
+                            <button className="portfolio__card__content-btn">
                                 view portfolio
                             </button>
                         </div>

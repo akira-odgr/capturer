@@ -1,0 +1,72 @@
+@use "../../globals/" as *;
+
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+
+.service {
+    &__container {
+        @include section-container;
+    }
+
+    &__title {
+        @include section-title;
+        color: var(--white);
+        text-transform: uppercase;
+    }
+
+    &__description {
+        @include section-description;
+    }
+
+    &__grid {
+        margin-top: 4rem;
+        display: grid;
+        gap: 2rem;
+
+        @include mq("sm") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq("md") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__card {
+        text-align: center;
+
+        h4 {
+            position: relative;
+            isolation: isolate;
+            margin-bottom: 1rem;
+            color: var(--white);
+            padding-bottom: 1rem;
+            // font: 400 1.75rem var(--header-font);
+            font-size: clamp(1.4rem, 2vw, 1.75rem);
+            font-weight: 400;
+            font-family: var(--header-font);
+
+            &::after {
+                content: "~";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                translate: -50% 0;
+                font-size: 2rem;
+                line-height: 0;
+            }
+        }
+
+        p {
+            color: var(--extra-light);
+            font-size: clamp(0.625rem, 2.5vw, 1rem);
+            line-height: 1.75rem;
+        }
+    }
+}

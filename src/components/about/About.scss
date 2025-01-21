@@ -1,3 +1,5 @@
+@use "../../globals/" as *;
+
 :root {
     --text-dark: #171717;
     --text-light: #525252;
@@ -9,16 +11,23 @@
 
 .about {
     &__container {
-        .section__description {
-            max-width: 900px;
-            margin-inline: auto;
-            margin-bottom: 2rem;
-        }
+        @include section-container;
+        max-width: 900px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
 
-        img {
-            display: block;
-            max-width: 170px;
-            margin-inline: auto;
-        }
+    &__title {
+        @include section-title;
+    }
+
+    &__description {
+        @include section-description;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 170px;
+        margin-inline: auto;
     }
 }

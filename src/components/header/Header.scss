@@ -99,6 +99,10 @@ header {
         &__logo {
             display: none;
 
+            a:hover::before {
+                animation: none in !important;
+            }
+
             @include mq("md") {
                 display: block;
 
@@ -107,9 +111,7 @@ header {
                 }
             }
         }
-        // li:nth-child(4) {
-        //     display: none;
-        // }
+
         a {
             position: relative;
             padding-bottom: 5px;
@@ -130,10 +132,10 @@ header {
                 background-color: var(--white);
                 transition: 0.5s;
             }
+
             &:hover::before {
                 animation: border 0.5s forwards;
             }
-
             @keyframes border {
                 from {
                     width: 0;

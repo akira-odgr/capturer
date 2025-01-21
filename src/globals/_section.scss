@@ -1,0 +1,21 @@
+@mixin section-container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding: 5rem 1rem;
+}
+
+@mixin section-title {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    font-weight: 400;
+    font-family: var(--header-font);
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+@mixin section-description {
+    font-size: clamp(0.625rem, 2.5vw, 1rem);
+    color: var(--text-light);
+    line-height: 1.75rem;
+    text-align: center;
+}

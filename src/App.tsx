@@ -1,8 +1,10 @@
 import { About } from "./components/about/About";
 import { Header } from "./components/header/Header";
+import { Portfolio } from "./components/portfolio/Portfolio";
+import { Service } from "./components/service/Service";
+import { Client } from "./components/client/Client";
 
 import "./App.scss";
-import { Portfolio } from "./components/Portfolio/Portfolio";
 
 export const App = () => {
     return (
@@ -10,6 +12,8 @@ export const App = () => {
             <Header />
             <About />
             <Portfolio />
+            <Service />
+            <Client />
         </>
     );
 };
