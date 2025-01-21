@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -5,9 +6,10 @@ import { clientData } from "./ClientData";
 
 import "./Client.scss";
 
+// @ts-ignore
 import "swiper/css";
+// @ts-ignore
 import "swiper/css/pagination";
-import { FC } from "react";
 
 export const Client: FC = () => {
     return (
