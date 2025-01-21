@@ -14,6 +14,9 @@ dependencies:
   react-icons:
     specifier: ^5.4.0
     version: 5.4.0(react@18.3.1)
+  swiper:
+    specifier: ^11.2.1
+    version: 11.2.1
 
 devDependencies:
   '@eslint/js':
@@ -3771,6 +3774,11 @@ packages:
       picocolors: 1.1.1
       stable: 0.1.8
     dev: true
+
+  /swiper@11.2.1:
+    resolution: {integrity: sha512-62G69+iQRIfUqTmJkWpZDcX891Ra8O9050ckt1/JI2H+0483g+gq0m7gINecDqMtDh2zt5dK+uzBRxGhGOOvQA==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
 
   /tar-stream@1.6.2:
     resolution: {integrity: sha512-rzS0heiNf8Xn7/mpdSVVSMAWAoy9bfb1WOTYC78Z0UQKeKa/CWS8FOq0lKGNa8DWKAn9gxjCvMLYc5PGXYlK2A==}

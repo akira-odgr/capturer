@@ -18,6 +18,16 @@
         @include section-title;
         color: var(--white);
         text-transform: uppercase;
+
+        &::before {
+            content: "~ ";
+            font-size: clamp(1.6rem, 5vw, 2rem);
+        }
+
+        &::after {
+            content: " ~";
+            font-size: clamp(1.6rem, 5vw, 2rem);
+        }
     }
 
     &__description {

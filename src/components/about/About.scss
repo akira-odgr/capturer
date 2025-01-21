@@ -23,6 +23,9 @@
 
     &__description {
         @include section-description;
+        max-width: 900px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
     }
 
     &__logo {

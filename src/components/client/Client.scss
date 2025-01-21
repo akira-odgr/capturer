@@ -1,0 +1,53 @@
+@use "../../globals/" as *;
+
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+    --desc-font-size: clamp(0.625rem, 2.5vw, 1rem);
+}
+
+.client {
+    &__container {
+        @include section-container;
+        padding-bottom: 2rem;
+    }
+
+    &__title {
+        @include section-title;
+
+        &::before {
+            content: "~ ";
+            font-size: clamp(1.6rem, 5vw, 2rem);
+        }
+
+        &::after {
+            content: " ~";
+            font-size: clamp(1.6rem, 5vw, 2rem);
+        }
+    }
+
+    &__card {
+        max-width: 900px;
+        margin-inline: auto;
+        text-align: center;
+
+        &__image {
+            max-width: 120px;
+            margin-inline: auto;
+            margin-bottom: 1rem;
+            border-radius: 100%;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        &__description {
+            font-size: var(--desc-font-size);
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.25rem;
+        }
+    }
+}
