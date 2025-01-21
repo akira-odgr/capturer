@@ -1,6 +1,5 @@
-import { PortfolioCard } from "./PortfolioCard";
-
 import "./Portfolio.scss";
+import { PortfolioCard } from "./PortfolioCard";
 
 export const Portfolio = () => {
     return (
