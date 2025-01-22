@@ -10,6 +10,14 @@
 }
 
 .gallery {
+    // .custom-shape-divider-top-1737474192 {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     overflow: hidden;
+    //     line-height: 0;
+    // }
     &__container {
         @include section-container;
     }
@@ -44,9 +52,12 @@
         &__image {
             overflow: hidden;
 
-            &:hover img {
-                transform: scale(1.3) rotate(15deg);
-                transition: 0.5s ease;
+            img {
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.3) rotate(15deg);
+                }
             }
         }
     }

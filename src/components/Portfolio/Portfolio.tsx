@@ -1,7 +1,7 @@
 import { FC } from "react";
-import "./Portfolio.scss";
 import { PortfolioCard } from "./PortfolioCard";
 
+import "./Portfolio.scss";
 // ... existing code ...
 
 export const Portfolio: FC = () => {

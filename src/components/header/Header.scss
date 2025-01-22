@@ -18,6 +18,7 @@ header {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
     min-height: 600px;
 
     @include mq("md") {

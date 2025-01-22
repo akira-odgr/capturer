@@ -26,7 +26,7 @@ export const Client: FC = () => {
                 >
                     {clientData.map((data) => (
                         <SwiperSlide>
-                            <div className="client__card">
+                            <div key={data.id} className="client__card">
                                 <img
                                     src={data.image}
                                     alt="client"

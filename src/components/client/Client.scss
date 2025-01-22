@@ -11,6 +11,7 @@
 }
 
 .client {
+    background-color: hsla(224, 45%, 89%, 0.635);
     &__container {
         @include section-container;
         padding-bottom: 2rem;
