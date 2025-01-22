@@ -10,16 +10,26 @@
 }
 
 header {
-    background-image: radial-gradient(
-            rgba(255, 255, 255, 0.5),
-            rgba(0, 0, 0, 0.9)
-        ),
-        url(../../assets/images/header.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
+    position: relative;
     min-height: 600px;
+    // 背景画像を削除
+
+    // clip-pathを疑似要素に移動
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+                rgba(255, 255, 255, 0.5),
+                rgba(0, 0, 0, 0.9)
+            ),
+            url(../../assets/images/header.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
+        z-index: -1;
+    }
 
     @include mq("md") {
         min-height: 650px;
@@ -35,7 +45,6 @@ header {
     top: 0;
     width: min(100%, var(--max-width));
     margin: auto;
-    z-index: 10;
 
     @include mq("md") {
         position: static;
@@ -46,12 +55,14 @@ header {
     }
 
     &__header {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
         background-color: var(--text-dark);
         padding: 1rem;
+        z-index: 100;
 
         @include mq("md") {
             display: none;
@@ -79,7 +90,7 @@ header {
         backdrop-filter: blur(10px);
         translate: 0 -100%;
         transition: 0.5s ease;
-        z-index: -1;
+        z-index: 10;
 
         @include mq("md") {
             position: static;

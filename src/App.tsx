@@ -5,6 +5,7 @@ import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Client } from "./components/client/Client";
 import { Gallery } from "./components/gallery/Gallery";
 import { Blog } from "./components/blog/Blog";
+import { Instagram } from "./components/instagram/Instagram";
 
 import "./App.scss";
 
@@ -18,6 +19,7 @@ export const App = () => {
             <Client />
             <Gallery />
             <Blog />
+            <Instagram />
         </>
     );
 };

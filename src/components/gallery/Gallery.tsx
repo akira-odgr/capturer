@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { motion } from "framer-motion";
+
 import GalleryImage1 from "../../assets/images/image-1.jpg";
 import GalleryImage2 from "../../assets/images/image-2.jpg";
 import GalleryImage3 from "../../assets/images/image-3.jpg";
@@ -41,11 +43,20 @@ export const Gallery: FC = () => {
             <div className="gallery__container">
                 <h2 className="gallery__title">gallery</h2>
                 <div className="gallery__grid">
-                    {GalleryImages.map((image) => {
+                    {GalleryImages.map((image, index) => {
                         return (
-                            <div className="gallery__grid__image">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{
+                                    duration: 1.5,
+                                    delay: 0.6 * index,
+                                }}
+                                viewport={{ once: true }}
+                                className="gallery__grid__image"
+                            >
                                 <img src={image} alt="" />
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>

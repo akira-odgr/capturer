@@ -1,0 +1,71 @@
+@use "../../globals/" as *;
+
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+    --desc-font-size: clamp(0.625rem, 2.5vw, 1rem);
+}
+
+.blog {
+    &__container {
+        display: grid;
+        padding-block: 8rem;
+
+        @include section-container;
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__content {
+        text-align: center;
+
+        @include mq("md") {
+            grid-column: 2 / 3;
+        }
+
+        &__title {
+            @include section-title;
+
+            margin-bottom: 2rem;
+            color: var(--white);
+
+            &::before {
+                content: "~ ";
+                font-size: clamp(1.6rem, 5vw, 2rem);
+            }
+
+            &::after {
+                content: " ~";
+                font-size: clamp(1.6rem, 5vw, 2rem);
+            }
+        }
+
+        h4 {
+            font-size: clamp(1rem, 3.2vw, 1.25rem);
+            font-weight: 400;
+            font-family: var(--header-font);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: var(--desc-font-size);
+            margin-bottom: 2rem;
+            line-height: 1.75rem;
+            color: var(--extra-light);
+        }
+
+        button {
+            @include button;
+
+            background-color: transparent;
+            border: 1px solid var(--white);
+        }
+    }
+}

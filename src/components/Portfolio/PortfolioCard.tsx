@@ -43,7 +43,7 @@ export const PortfolioCard: FC = () => {
                     // GSAPを使用してフェードインアニメーションを実行
                     gsap.fromTo(
                         ref,
-                        { opacity: 0, y: 150 },
+                        { opacity: 0, y: 120 },
                         { opacity: 1, y: 0, duration: 3, delay: index * 0.2 }
                     );
                 }
