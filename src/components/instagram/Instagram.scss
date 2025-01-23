@@ -13,6 +13,7 @@
 .instagram {
     &__container {
         @include section-container;
+        overflow: hidden;
     }
 
     &__title {
