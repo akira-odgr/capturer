@@ -51,6 +51,8 @@
         isolation: isolate;
         opacity: 0;
 
+        z-index: -1;
+
         &:hover &__content {
             opacity: 1;
         }

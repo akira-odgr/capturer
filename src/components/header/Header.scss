@@ -46,6 +46,8 @@ header {
     width: min(100%, var(--max-width));
     margin: auto;
 
+    z-index: 100;
+
     @include mq("md") {
         position: static;
         display: flex;
@@ -62,7 +64,8 @@ header {
         gap: 1rem;
         background-color: var(--text-dark);
         padding: 1rem;
-        z-index: 100;
+
+        z-index: 101;
 
         @include mq("md") {
             display: none;

@@ -20,14 +20,13 @@ export const App = () => {
         }, 3000);
         return () => clearTimeout(timer); // クリーンアップ
 
-        //     // データ取得や処理をシミュレート
-        //     const fetchData = async () => {
-        //         // ここでデータを取得する処理を行う
-        //         // 例: await fetch("api_endpoint");
-        //         setLoading(false); // ロードが完了したらローディングを終了
-        //     };
-
-        //     fetchData(); // データ取得を実行
+        // // データ取得や処理をシミュレート
+        // const fetchData = async () => {
+        //     // ここでデータを取得する処理を行う
+        //     // 例: await fetch("api_endpoint");
+        //     setLoading(false); // ロードが完了したらローディングを終了
+        // };
+        // fetchData(); // データ取得を実行
     }, []);
 
     return (
