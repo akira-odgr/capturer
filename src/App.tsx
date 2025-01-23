@@ -10,6 +10,7 @@ import { Blog } from "./components/blog/Blog";
 import { Instagram } from "./components/instagram/Instagram";
 
 import "./App.scss";
+import { Footer } from "./components/footer/Footer";
 
 export const App = () => {
     const [loading, setLoading] = useState(true); // ローディング状態を管理
@@ -46,6 +47,7 @@ export const App = () => {
                     <Gallery />
                     <Blog />
                     <Instagram />
+                    <Footer />
                 </div>
             )}
         </>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { clientData } from "./ClientData";
@@ -10,6 +10,7 @@ import "./Client.scss";
 import "swiper/css";
 // @ts-ignore
 import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 export const Client: FC = () => {
     return (
@@ -18,10 +19,16 @@ export const Client: FC = () => {
                 <h2 className="client__title">testimonials</h2>
 
                 <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
                     slidesPerView={1}
-                    pagination={{ clickable: true }}
+                    spaceBetween={30}
+                    keyboard={{
+                        enabled: true,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    // navigation={true}
+                    modules={[Keyboard, Pagination, Navigation]}
                     className="swiper"
                 >
                     {clientData.map((data) => (

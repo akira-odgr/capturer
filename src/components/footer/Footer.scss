@@ -1,0 +1,116 @@
+@use "../../globals/" as *;
+
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --extra-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+
+.footer {
+    &__container {
+        @include section-container;
+        display: grid;
+        gap: 4rem 0;
+        align-items: center;
+
+        @include mq("sm") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq("md") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__col {
+        padding-inline: 2rem;
+
+        &__image {
+            max-width: 170px;
+            margin-inline: auto;
+            margin-bottom: 2rem;
+        }
+
+        &__socials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            a {
+                font-size: 1.5rem;
+                color: var(--text-dark);
+
+                &:hover {
+                    color: var(--text-light);
+                }
+            }
+        }
+
+        &__links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+
+            a {
+                display: block;
+                font-weight: 600;
+                color: var(--text-dark);
+                text-align: center;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: var(--text-light);
+                }
+            }
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-light);
+            line-height: 1.75rem;
+            text-align: center;
+        }
+
+        @include mq("sm") {
+            &:nth-child(1) {
+                grid-area: 1/1/2/3;
+            }
+
+            &:nth-child(3) {
+                border-left: 2px solid var(--text-dark);
+            }
+        }
+
+        @include mq("md") {
+            &:nth-child(1) {
+                grid-area: 1/2/2/3;
+                border-left: 2px solid var(--text-dark);
+                border-right: 2px solid var(--text-dark);
+            }
+
+            &:nth-child(3) {
+                border: none;
+            }
+        }
+    }
+
+    &__bar {
+        font-size: clamp(0.625rem, 2vw, 0.9rem);
+        text-align: center;
+        color: var(--extra-light);
+        background-color: var(--text-dark);
+        padding: 1rem;
+    }
+}
