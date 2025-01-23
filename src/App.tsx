@@ -33,7 +33,10 @@ export const App = () => {
     return (
         <>
             {loading ? ( // ローディング中はLoadingメッセージを表示
-                <div className="loader"></div>
+                <div className="loading__container">
+                    <div className="loader"></div>
+                    <p>Loading...</p>
+                </div>
             ) : (
                 <div className="fade-in">
                     <Header />
