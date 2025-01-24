@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { About } from "./components/about/About";
 import { Header } from "./components/header/Header";
 import { Service } from "./components/service/Service";
@@ -8,9 +7,8 @@ import { Client } from "./components/client/Client";
 import { Gallery } from "./components/gallery/Gallery";
 import { Blog } from "./components/blog/Blog";
 import { Instagram } from "./components/instagram/Instagram";
-
-import "./App.scss";
 import { Footer } from "./components/footer/Footer";
+import "./App.scss";
 
 export const App = () => {
     const [loading, setLoading] = useState(true); // ローディング状態を管理
@@ -18,7 +16,7 @@ export const App = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false); // 3秒後にローディングを終了
-        }, 3000);
+        }, 2000);
         return () => clearTimeout(timer); // クリーンアップ
 
         // // データ取得や処理をシミュレート

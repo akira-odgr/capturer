@@ -49,8 +49,8 @@ export const Gallery: FC = () => {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{
-                                    duration: 1.5,
-                                    delay: 0.6 * index,
+                                    duration: 1.0,
+                                    delay: 0.5 * index,
                                 }}
                                 viewport={{ once: true }}
                                 className="gallery__grid__image"

@@ -6,8 +6,10 @@ export const Header: FC = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     const toggle = (): void => {
+        // isActiveの状態を反転させる関数
         setIsActive(!isActive);
     };
+
     return (
         <header>
             <nav className="nav">

@@ -25,19 +25,23 @@ const InstagramImages: string[] = [
 export const Instagram: FC = () => {
     useEffect(() => {
         const content = document.querySelector(".instagram__content");
-        gsap.to(content, {
-            x: "-50%", // 50%左に移動
-            duration: 45,
-            repeat: -1,
-            ease: "linear",
-        });
+        if (content) {
+            const totalWidth = content.scrollWidth; // コンテンツの全幅を取得
+            gsap.to(content, {
+                x: `-${totalWidth / 2}px`, // コンテンツの半分の幅だけ左に移動
+                duration: 60, // アニメーションの時間
+                repeat: -1, // 無限に繰り返す
+                ease: "linear",
+            });
+        }
     }, []);
 
     return (
         <section className="instagram__container">
             <div className="instagram__title">instagram</div>
             <div className="instagram__content">
-                {InstagramImages.map((image, index) => (
+                {/* 画像を2セット表示 */}
+                {InstagramImages.concat(InstagramImages).map((image, index) => (
                     <img
                         key={index}
                         src={image}

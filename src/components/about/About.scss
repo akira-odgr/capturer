@@ -19,6 +19,7 @@
 
     &__title {
         @include section-title;
+        margin-bottom: 2rem;
     }
 
     &__description {
